@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Usage:
+# <datasource> <overwrite>
+
+#datasource=sales_train
+
+# Main Config Path
+confpath=/usr/lib/framework/config
+
+# Get datasource name
+datasource=$1
+
+# Get datasoruce file location
+confdir=$confpath/$datasource
+
+objects_path=$confdir/${datasource}_objects
+objects_name=$(cat $objects_path)
+
+sourcedir=/home/cloudera/Downloads/$datasource
+
+# Get HDFS Path
+hdfs_path=/raw/$datasource
